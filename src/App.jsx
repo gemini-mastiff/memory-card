@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MainMenu from "./components/MainMenu.jsx";
 import MenuBtn from "./components/MenuBtn.jsx";
+import GameScreen from "./components/GameScreen.jsx";
 import "./App.css";
 
 function App() {
@@ -10,12 +11,10 @@ function App() {
   const [activeGame, setActiveGame] = useState(false);
 
   const handleContinent = (e) => {
-    console.log(e.target.value);
     setContinent(e.target.value);
   };
 
   const handleDifficulty = (e) => {
-    console.log(e.target.value);
     setDifficulty(e.target.value);
   };
 
@@ -25,7 +24,11 @@ function App() {
         <h1>Country Memory Game</h1>
       </header>
       {activeGame ? (
-        <h1>Active Game!</h1>
+        <GameScreen
+          setActiveGame={setActiveGame}
+          countryArr={countryArr}
+          difficulty={difficulty}
+        />
       ) : (
         <MainMenu
           handleContinent={handleContinent}
