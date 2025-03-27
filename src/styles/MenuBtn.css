@@ -1,0 +1,13 @@
+.menu__btn,
+.menu__btn--start {
+  font: inherit;
+  border: none;
+  background-color: oklch(0.809 0.105 251.813);
+  padding: 0.55em 1em;
+  border-radius: 100px;
+}
+
+.menu__btn--select {
+  background-color: oklch(0.457 0.24 277.023);
+  color: #fff;
+}
