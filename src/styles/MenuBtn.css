@@ -1,5 +1,4 @@
-.menu__btn,
-.menu__btn--start {
+.menu__btn {
   font: inherit;
   border: none;
   background-color: oklch(0.809 0.105 251.813);
@@ -7,7 +6,8 @@
   border-radius: 100px;
 }
 
-.menu__btn--select {
+.menu__btn--select,
+.menu__btn:active {
   background-color: oklch(0.457 0.24 277.023);
   color: #fff;
 }
