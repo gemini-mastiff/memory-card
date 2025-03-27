@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.button-container,
+.start-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 2em 0;
+}
