@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MainMenu from "./components/MainMenu.jsx";
 import MenuBtn from "./components/MenuBtn.jsx";
 import GameScreen from "./components/GameScreen.jsx";
@@ -9,6 +9,22 @@ function App() {
   const [countryArr, setCountryArr] = useState([]);
   const [difficulty, setDifficulty] = useState(0.25);
   const [activeGame, setActiveGame] = useState(false);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          `https://restcountries.com/v3.1/region/${continent}?fields=name,flags`
+        );
+        const json = await response.json();
+        setCountryArr(json);
+      } catch (error) {
+        throw new Error(error);
+      }
+    }
+
+    fetchData();
+  }, [continent]);
 
   const handleContinent = (e) => {
     setContinent(e.target.value);
@@ -33,7 +49,6 @@ function App() {
         <MainMenu
           handleContinent={handleContinent}
           handleDifficulty={handleDifficulty}
-          setCountryArr={setCountryArr}
           setActiveGame={setActiveGame}
           continent={continent}
           difficulty={difficulty}

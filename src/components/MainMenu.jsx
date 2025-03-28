@@ -1,31 +1,13 @@
-import { useEffect } from "react";
 import MenuBtn from "./MenuBtn.jsx";
 import "../styles/MainMenu.css";
 
 export default function MainMenu({
   handleContinent,
   handleDifficulty,
-  setCountryArr,
   setActiveGame,
   continent,
   difficulty,
 }) {
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch(
-          `https://restcountries.com/v3.1/region/${continent}?fields=name,flags`
-        );
-        const json = await response.json();
-        setCountryArr(json);
-      } catch (error) {
-        throw new Error(error);
-      }
-    }
-
-    fetchData();
-  }, [continent, setCountryArr]);
-
   return (
     <>
       <section className="menu container">
