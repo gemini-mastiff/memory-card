@@ -9,6 +9,10 @@
   margin-bottom: 2em;
 }
 
+.button-header {
+  font-size: 1.5rem;
+}
+
 .button-container,
 .start-button-container {
   display: flex;
