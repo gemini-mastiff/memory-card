@@ -16,9 +16,33 @@
   margin: 0.5em 0;
 }
 
+.display-game-over {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--MAIN-COLOUR);
+  border-radius: 1.5em;
+  padding: 0.5em 1em;
+  box-shadow: 2px 3px 5px 0px var(--TEXT-LIGHT);
+  margin: 0 auto;
+}
+
+.game-over-score {
+  display: flex;
+  gap: 5em;
+}
+
 .card-container {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   gap: 1em;
+}
+
+.btn-container--game-over {
+  width: 30%;
+  display: flex;
+  gap: 3em;
+  margin: 3em auto;
 }

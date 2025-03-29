@@ -23,7 +23,7 @@ function randomCards(arr, usedCards) {
 
 export default function GameScreen({ setActiveGame, countryArr, difficulty }) {
   const [usedCards, setUsedCards] = useState([]);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [isGameOver, setIsGameOver] = useState(true);
   const [prevHighScore, setPrevHighScore] = useState(0);
 
   const randCards = randomCards(countryArr, usedCards);
@@ -48,12 +48,18 @@ export default function GameScreen({ setActiveGame, countryArr, difficulty }) {
 
   if (isGameOver) {
     return (
-      <div className="game-over-container">
-        <h2>{winState ? "You Win!" : "Game Over"}</h2>
-        <p>{`Your Score: ${score} / ${scoreCap}`}</p>
-        <p>{`High Score: ${highScore}`}</p>
-        <MenuBtn name="Main Menu" onClick={() => setActiveGame(false)} />
-        <MenuBtn name="Play Again?" onClick={handleNewGame} />
+      <div className="game-over-container container">
+        <div className="display-game-over">
+          <h2>{winState ? "You Win!" : "Game Over"}</h2>
+          <div className="game-over-score">
+            <p>{`Your Score: ${score} / ${scoreCap}`}</p>
+            <p>{`High Score: ${highScore}`}</p>
+          </div>
+        </div>
+        <div className="btn-container--game-over">
+          <MenuBtn name="Main Menu" onClick={() => setActiveGame(false)} />
+          <MenuBtn name="Play Again?" onClick={handleNewGame} />
+        </div>
       </div>
     );
   }
