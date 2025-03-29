@@ -1,5 +1,7 @@
 import "../styles/GameScreen.css";
 import { useState } from "react";
+import CountryCard from "./CountryCard.jsx";
+import MenuBtn from "./MenuBtn.jsx";
 
 function randomCards(arr, usedCards) {
   let newArr = [];
@@ -50,8 +52,8 @@ export default function GameScreen({ setActiveGame, countryArr, difficulty }) {
         <h2>{winState ? "You Win!" : "Game Over"}</h2>
         <p>{`Your Score: ${score} / ${scoreCap}`}</p>
         <p>{`High Score: ${highScore}`}</p>
-        <button onClick={() => setActiveGame(false)}>Main Menu</button>
-        <button onClick={handleNewGame}>Play Again?</button>
+        <MenuBtn name="Main Menu" onClick={() => setActiveGame(false)} />
+        <MenuBtn name="Play Again?" onClick={handleNewGame} />
       </div>
     );
   }
@@ -62,26 +64,23 @@ export default function GameScreen({ setActiveGame, countryArr, difficulty }) {
   }
 
   return (
-    <div className="game-screen container">
-      <p>{`${score} / ${scoreCap}`}</p>
-      <p>{`High Score: ${highScore}`}</p>
-      <div className="card-container">
+    <div className="game-screen">
+      <div className="game-header container">
+        <MenuBtn name="Main Menu" onClick={() => setActiveGame(false)} />
+        <div className="score-container">
+          <p>{`${score} / ${scoreCap}`}</p>
+          <p>{`High Score: ${highScore}`}</p>
+        </div>
+      </div>
+      <div className="card-container container">
         {randCards.map((card) => {
           return (
-            <div
-              className="card"
+            <CountryCard
               key={card.name.common}
+              name={card.name.common}
+              flag={card.flags.svg}
               onClick={() => handleCard(card.name.common)}
-            >
-              <div className="flag__container">
-                <img
-                  className="card__flag"
-                  src={card.flags.svg}
-                  alt={`${card.name.common} Flag`}
-                />
-              </div>
-              <h2 className="card__title">{card.name.common}</h2>
-            </div>
+            />
           );
         })}
       </div>
