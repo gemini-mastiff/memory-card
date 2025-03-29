@@ -3,6 +3,12 @@
 /* font-family: 'Playfair Display', serif;
 font-family: 'Roboto Flex', sans-serif; */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --MAIN-COLOUR: #fafaf9;
   --BG-COLOUR: #e5e7eb;
