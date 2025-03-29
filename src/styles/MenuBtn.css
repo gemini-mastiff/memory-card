@@ -1,13 +1,14 @@
 .menu__btn {
   font: inherit;
   border: none;
-  background-color: oklch(0.809 0.105 251.813);
+  background-color: var(--MAIN-COLOUR);
   padding: 0.55em 1em;
   border-radius: 100px;
+  box-shadow: 2px 3px 5px 0px var(--TEXT-LIGHT);
 }
 
 .menu__btn--select,
 .menu__btn:active {
-  background-color: oklch(0.457 0.24 277.023);
-  color: #fff;
+  color: var(--ACCENT-1);
+  box-shadow: inset 2px 3px 5px 0px var(--TEXT-LIGHT);
 }
