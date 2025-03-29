@@ -1,11 +1,20 @@
 .card {
-  width: 150px;
-  border: 1px solid red;
+  width: 200px;
+  background-color: var(--MAIN-COLOUR);
+  border-radius: 1.5em;
   padding: 1em;
   text-align: center;
+  box-shadow: 2px 3px 5px 0px var(--TEXT-LIGHT);
   text-wrap: wrap;
 }
 
+.flag__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 3px 5px 0px var(--TEXT-LIGHT);
+}
+
 .card__flag {
-  width: 150px;
+  width: 100%;
 }
