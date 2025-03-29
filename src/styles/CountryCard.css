@@ -1,0 +1,11 @@
+.card {
+  width: 150px;
+  border: 1px solid red;
+  padding: 1em;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+.card__flag {
+  width: 150px;
+}
