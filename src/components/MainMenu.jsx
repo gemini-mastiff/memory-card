@@ -10,8 +10,8 @@ export default function MainMenu({
 }) {
   return (
     <>
-      <section className="menu container">
-        <div className="button-section">
+      <section className="menu">
+        <div className="button-section container">
           <h2 className="button-header">Continent</h2>
           <div className="button-container">
             <MenuBtn
@@ -46,7 +46,7 @@ export default function MainMenu({
             />
           </div>
         </div>
-        <div className="button-section">
+        <div className="button-section container">
           <h2 className="button-header">Difficulty</h2>
           <div className="button-container">
             <MenuBtn
@@ -75,7 +75,7 @@ export default function MainMenu({
             />
           </div>
         </div>
-        <div className="start-button-container">
+        <div className="start-button-container container">
           <MenuBtn
             name="Start Game"
             value={null}
