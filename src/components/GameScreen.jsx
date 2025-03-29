@@ -23,7 +23,7 @@ function randomCards(arr, usedCards) {
 
 export default function GameScreen({ setActiveGame, countryArr, difficulty }) {
   const [usedCards, setUsedCards] = useState([]);
-  const [isGameOver, setIsGameOver] = useState(true);
+  const [isGameOver, setIsGameOver] = useState(false);
   const [prevHighScore, setPrevHighScore] = useState(0);
 
   const randCards = randomCards(countryArr, usedCards);
