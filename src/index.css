@@ -4,5 +4,12 @@
 font-family: 'Roboto Flex', sans-serif; */
 
 :root {
+  --MAIN-COLOUR: #fafaf9;
+  --BG-COLOUR: #e5e7eb;
+  --TEXT-LIGHT: #a3a3a3;
+  --ACCENT-1: #0ea5e9;
+  --ACCENT-2: #facc15;
   font-family: "Roboto Flex", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
 }
